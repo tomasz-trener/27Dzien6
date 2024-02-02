@@ -84,6 +84,9 @@ namespace P04Zawodnicy.Shared.Services
             pzb.WyslijPolecenieSQL(sql);
         }
 
+        // podataność na atak SQL injection
+        // np: podczas podawania kraju podać:
+        // POL','20240101',1,1); drop table zawodnicy--
         public void Dodaj(Zawodnik z)
         {
             string szablon = "insert into zawodnicy (id_trenera,imie, nazwisko,kraj,data_ur,wzrost,waga) values ({0},'{1}','{2}','{3}','{4}',{5},{6})";
@@ -130,3 +133,10 @@ namespace P04Zawodnicy.Shared.Services
         }
     }
 }
+
+
+// komunikacja z bazą danych może przebiegac na 3 sposoby :
+
+//1) Polecenia SQL , parametryzacja zapytań
+//2) procedury wbudowane 
+//3) ORM (object-relation-mapping) 
