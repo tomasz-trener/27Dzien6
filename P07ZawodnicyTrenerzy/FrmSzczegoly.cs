@@ -80,12 +80,14 @@ namespace P07ZawodnicyTrenerzy
             {
                 zczytajDaneZKontrolek();
                 //  frmStartowy.Zapisz();
+                wyswietlany.Id_trenera = (int)cbTrenerzy.SelectedValue;
                 mz.Edytuj(wyswietlany);
             }
             else if (trybOkienka== TrybOkienka.Dodwanie)
             {
                 wyswietlany = new Zawodnik();
                 zczytajDaneZKontrolek();
+                wyswietlany.Id_trenera = (int)cbTrenerzy.SelectedValue;
                 mz.Dodaj(wyswietlany);
               //  frmStartowy.Zapisz();
             }

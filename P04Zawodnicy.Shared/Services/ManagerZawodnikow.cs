@@ -72,7 +72,9 @@ namespace P04Zawodnicy.Shared.Services
 
         public void Edytuj(Zawodnik edytowany)
         {
+            string id_trenera = edytowany.Id_trenera == null ? "null" : edytowany.Id_trenera.ToString();
             string sql = $@"update zawodnicy set 
+                            id_trenera = '{id_trenera}',
                             imie = '{edytowany.Imie}', 
                             nazwisko= '{edytowany.Nazwisko}',
                             kraj='{edytowany.Kraj}',
