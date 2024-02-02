@@ -58,10 +58,10 @@ namespace P03AplikacjaBazodanowaZawodnicy
 
         }
 
-        public void Zapisz()
-        {
-            mz.Zapisz();
-        }
+        //public void Zapisz()
+        //{
+        //    mz.Zapisz();
+        //}
 
         private void btnNowy_Click(object sender, EventArgs e)
         {

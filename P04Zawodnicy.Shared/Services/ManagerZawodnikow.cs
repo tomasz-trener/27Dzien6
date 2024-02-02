@@ -70,9 +70,18 @@ namespace P04Zawodnicy.Shared.Services
             }
         }
 
-        public void Zapisz()
+        public void Edytuj(Zawodnik edytowany)
         {
-            throw new NotImplementedException();
+            string sql = $@"update zawodnicy set 
+                            imie = '{edytowany.Imie}', 
+                            nazwisko= '{edytowany.Nazwisko}',
+                            kraj='{edytowany.Kraj}',
+                            data_ur='{edytowany.DataUrodzenia.ToString("yyyyMMdd")}',
+                            wzrost ={edytowany.Wzrost}, 
+                            waga ={edytowany.Waga}
+                            where id_zawodnika ={edytowany.Id_zawodnika}";
+
+            pzb.WyslijPolecenieSQL(sql);
         }
 
         public void Dodaj(Zawodnik z)
