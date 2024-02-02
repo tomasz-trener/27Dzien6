@@ -44,13 +44,16 @@ namespace P05KontrolkaDataGridView
 
             try
             {
-                object[][] wynik = pzb.WyslijPolecenieSQL(txtPolecenieSQL.Text);
+                (string[] naglowki, object[][] wynik) = pzb.WyslijPolecenieSQLPlusNaglowki(txtPolecenieSQL.Text);
 
                 dgvDane.Rows.Clear();
 
                 if (wynik.Length > 0)
                 {
                     dgvDane.ColumnCount = wynik[0].Length;
+
+                    for (int i = 0; i < naglowki.Length; i++)
+                        dgvDane.Columns[i].HeaderText = naglowki[i];
 
                     foreach (var wiersz in wynik)
                         dgvDane.Rows.Add(wiersz);
