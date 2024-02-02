@@ -1,0 +1,39 @@
+﻿Cel zadania: Celem zadania jest rozbudowa istniejącej aplikacji zarządzającej zawodnikami o możliwość przypisywania im trenerów. Funkcjonalność ta będzie polegała na dodaniu do formularza szczegółów zawodnika listy rozwijanej, z której można będzie wybrać trenera (składającego się z imienia i nazwiska) trenującego danego zawodnika. Użytkownik powinien mieć możliwość zobaczenia aktualnie przypisanego trenera oraz zmiany go na innego z listy dostępnych trenerów.
+
+Wymagania:
+Modyfikacja bazy danych: Upewnij się, że w bazie danych istnieje tabela trenerzy zawierająca przynajmniej kolumny id_trenera, imie, nazwisko. Tabela zawodnicy musi zawierać kolumnę id_trenera jako klucz obcy referencyjny do tabeli trenerzy.
+
+Rozbudowa logiki aplikacji:
+
+Dodaj metodę PodajTrenerow() w klasie odpowiedzialnej za zarządzanie danymi (np. ManagerZawodnikow), która będzie zwracać listę dostępnych trenerów.
+Utwórz klasę Trener zawierającą właściwości odzwierciedlające strukturę danych trenera (np. IdTrenera, Imie, Nazwisko oraz właściwość PelneImie łączącą imię i nazwisko).
+Modyfikacja interfejsu użytkownika:
+
+W formularzu szczegółów zawodnika (FrmSzczegoly) dodaj kontrolkę ComboBox (cbTrenerzy), która będzie wyświetlać listę trenerów.
+Zainicjuj ComboBox danymi trenerów w konstruktorze formularza szczegółów, ustawiając DataSource, DisplayMember oraz ValueMember.
+Zaimplementuj logikę wyboru aktualnie przypisanego trenera do zawodnika podczas inicjalizacji formularza oraz zmianę przypisania trenera podczas zapisu.
+Zapis zmian:
+
+Zmodyfikuj metodę zapisywania danych zawodnika, aby uwzględniała również wybranego trenera z listy rozwijanej.
+
+Przygotowanie bazy danych:
+
+Sprawdź strukturę tabeli trenerzy oraz relację między trenerzy a zawodnicy.
+Jeśli konieczne, dokonaj modyfikacji lub utworzenia tabeli trenerzy.
+Implementacja logiki pobierania trenerów:
+
+W klasie ManagerZawodnikow dodaj metodę PodajTrenerow(), która wykonuje zapytanie SQL do bazy danych i zwraca wyniki jako tablicę lub listę obiektów Trener.
+Rozbudowa klasy Trener:
+
+Utwórz klasę Trener z odpowiednimi właściwościami.
+Dodaj właściwość PelneImie, która zwróci połączone imię i nazwisko trenera.
+Modyfikacja formularza szczegółów zawodnika:
+
+Dodaj do formularza FrmSzczegoly kontrolkę ComboBox (cbTrenerzy).
+W metodzie inicjalizującej formularz (InitializeComponent lub konstruktor) zainicjuj ComboBox listą trenerów.
+Ustaw domyślnie wybranego trenera dla zawodnika podczas ładowania formularza.
+Implementacja zapisu wyboru trenera:
+
+Zmodyfikuj metodę obsługującą zapis danych zawodnika, tak aby aktualizowała również informację o trenerze w bazie danych, bazując na wyborze użytkownika z listy rozwijanej.
+Wskazówki:
+Pamiętaj o odpowiednim obsłużeniu błędów, np. co się stanie, gdy lista trenerów będzie pusta lub nie będzie można załadować danych z bazy.
