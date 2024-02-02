@@ -63,8 +63,15 @@ namespace P07ZawodnicyTrenerzy
 
             wyswietlany = zawodnik;
 
+            //załadauj trenerów do cbTrenerzy
+            var trenerzy = mz.PodajTrenerow();
+            cbTrenerzy.DataSource = trenerzy;
+            cbTrenerzy.DisplayMember = "PelneImie";
+            cbTrenerzy.ValueMember = "Id";
 
-            
+            if (wyswietlany != null)
+                cbTrenerzy.SelectedValue = wyswietlany.Id_trenera;
+
         }
 
         private void btnZapisz_Click(object sender, EventArgs e)

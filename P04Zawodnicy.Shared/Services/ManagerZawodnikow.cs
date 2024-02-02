@@ -131,6 +131,23 @@ namespace P04Zawodnicy.Shared.Services
                 zawodnicy[i] = z;
             }
         }
+
+
+        public Trener[] PodajTrenerow()
+        {
+            object[][] dane = pzb.WyslijPolecenieSQL("select id_trenera, imie_t, nazwisko_t from trenerzy");
+            Trener[] trenerzy = new Trener[dane.Length];
+            for (int i = 0; i < dane.Length; i++)
+            {
+                trenerzy[i] = new Trener()
+                {
+                    Id = (int)dane[i][0],
+                    Imie = (string)dane[i][1],
+                    Nazwisko = (string)dane[i][2]
+                };
+            }
+            return trenerzy;
+        }
     }
 }
 

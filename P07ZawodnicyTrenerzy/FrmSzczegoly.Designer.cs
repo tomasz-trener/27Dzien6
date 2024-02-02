@@ -43,6 +43,7 @@
             this.btnZapisz = new System.Windows.Forms.Button();
             this.btnUsun = new System.Windows.Forms.Button();
             this.pnlKontrolkiDoEdycji = new System.Windows.Forms.Panel();
+            this.cbTrenerzy = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numWzrost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWaga)).BeginInit();
             this.pnlKontrolkiDoEdycji.SuspendLayout();
@@ -152,7 +153,7 @@
             // 
             // btnZapisz
             // 
-            this.btnZapisz.Location = new System.Drawing.Point(102, 252);
+            this.btnZapisz.Location = new System.Drawing.Point(102, 283);
             this.btnZapisz.Name = "btnZapisz";
             this.btnZapisz.Size = new System.Drawing.Size(75, 23);
             this.btnZapisz.TabIndex = 15;
@@ -162,7 +163,7 @@
             // 
             // btnUsun
             // 
-            this.btnUsun.Location = new System.Drawing.Point(12, 252);
+            this.btnUsun.Location = new System.Drawing.Point(12, 283);
             this.btnUsun.Name = "btnUsun";
             this.btnUsun.Size = new System.Drawing.Size(75, 23);
             this.btnUsun.TabIndex = 16;
@@ -172,6 +173,7 @@
             // 
             // pnlKontrolkiDoEdycji
             // 
+            this.pnlKontrolkiDoEdycji.Controls.Add(this.cbTrenerzy);
             this.pnlKontrolkiDoEdycji.Controls.Add(this.txtKraj);
             this.pnlKontrolkiDoEdycji.Controls.Add(this.btnUsun);
             this.pnlKontrolkiDoEdycji.Controls.Add(this.label1);
@@ -188,14 +190,22 @@
             this.pnlKontrolkiDoEdycji.Controls.Add(this.label6);
             this.pnlKontrolkiDoEdycji.Location = new System.Drawing.Point(12, 0);
             this.pnlKontrolkiDoEdycji.Name = "pnlKontrolkiDoEdycji";
-            this.pnlKontrolkiDoEdycji.Size = new System.Drawing.Size(197, 287);
+            this.pnlKontrolkiDoEdycji.Size = new System.Drawing.Size(197, 327);
             this.pnlKontrolkiDoEdycji.TabIndex = 17;
+            // 
+            // cbTrenerzy
+            // 
+            this.cbTrenerzy.FormattingEnabled = true;
+            this.cbTrenerzy.Location = new System.Drawing.Point(12, 256);
+            this.cbTrenerzy.Name = "cbTrenerzy";
+            this.cbTrenerzy.Size = new System.Drawing.Size(165, 21);
+            this.cbTrenerzy.TabIndex = 17;
             // 
             // FrmSzczegoly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(217, 295);
+            this.ClientSize = new System.Drawing.Size(217, 342);
             this.Controls.Add(this.pnlKontrolkiDoEdycji);
             this.Name = "FrmSzczegoly";
             this.Text = "FrmSzczegoly";
@@ -224,5 +234,6 @@
         private System.Windows.Forms.Button btnZapisz;
         private System.Windows.Forms.Button btnUsun;
         private System.Windows.Forms.Panel pnlKontrolkiDoEdycji;
+        private System.Windows.Forms.ComboBox cbTrenerzy;
     }
 }
