@@ -152,6 +152,21 @@ namespace P04Zawodnicy.Shared.Services
             return trenerzy;
         }
 
+
+        /*
+         * select AVG(year(getdate()) - year(data_ur)) from zawodnicy
+
+
+
+            create procedure SredniWiekZawodnikow
+	            @Kraj varchar(3),
+	            @SredniWiek INT OUTPUT 
+            as
+            begin
+	            select @SredniWiek= AVG(year(getdate()) - year(data_ur)) from zawodnicy where kraj = @kraj
+            end
+                    */
+
         public int PodajSredniWiekZawodnikow(string kraj)
         {
             using (SqlConnection connection = new SqlConnection(pzb.ConnectionString))
