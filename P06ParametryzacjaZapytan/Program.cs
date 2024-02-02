@@ -25,13 +25,13 @@ namespace P06ParametryzacjaZapytan
             // wpisanie w konsoli: 
             //'; DROP TABLE zawodnicy;--
             // jest atakiem sql injection 
-            //command = new SqlCommand($"select * from zawodnicy where imie = '{imie}'", connection);
+            command = new SqlCommand($"select * from zawodnicy where imie = '{imie}'", connection);
 
 
             //bezpieczne rozwiazanie: 
-            string bezpiecznySQL = "select * from zawodnicy where imie = @imie";
-            command = new SqlCommand(bezpiecznySQL, connection);
-            command.Parameters.AddWithValue("@imie", imie);
+            //string bezpiecznySQL = "select * from zawodnicy where imie = @imie";
+            //command = new SqlCommand(bezpiecznySQL, connection);
+            //command.Parameters.AddWithValue("@imie", imie);
 
             connection.Open();
 
