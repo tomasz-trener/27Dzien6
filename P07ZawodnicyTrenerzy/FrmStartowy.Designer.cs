@@ -38,6 +38,7 @@
             this.btnGenerujPDF = new System.Windows.Forms.Button();
             this.wbPrzegladarka = new System.Windows.Forms.WebBrowser();
             this.clbKolumny = new System.Windows.Forms.CheckedListBox();
+            this.btnPokazSreniWiek = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblRaport
@@ -127,17 +128,28 @@
             // 
             this.clbKolumny.CheckOnClick = true;
             this.clbKolumny.FormattingEnabled = true;
-            this.clbKolumny.Location = new System.Drawing.Point(261, 178);
+            this.clbKolumny.Location = new System.Drawing.Point(261, 208);
             this.clbKolumny.Name = "clbKolumny";
-            this.clbKolumny.Size = new System.Drawing.Size(75, 154);
+            this.clbKolumny.Size = new System.Drawing.Size(75, 124);
             this.clbKolumny.TabIndex = 13;
             this.clbKolumny.SelectedIndexChanged += new System.EventHandler(this.clbKolumny_SelectedIndexChanged);
+            // 
+            // btnPokazSreniWiek
+            // 
+            this.btnPokazSreniWiek.Location = new System.Drawing.Point(261, 179);
+            this.btnPokazSreniWiek.Name = "btnPokazSreniWiek";
+            this.btnPokazSreniWiek.Size = new System.Drawing.Size(75, 23);
+            this.btnPokazSreniWiek.TabIndex = 14;
+            this.btnPokazSreniWiek.Text = "sr wiek";
+            this.btnPokazSreniWiek.UseVisualStyleBackColor = true;
+            this.btnPokazSreniWiek.Click += new System.EventHandler(this.btnPokazSreniWiek_Click);
             // 
             // FrmStartowy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(625, 352);
+            this.Controls.Add(this.btnPokazSreniWiek);
             this.Controls.Add(this.clbKolumny);
             this.Controls.Add(this.wbPrzegladarka);
             this.Controls.Add(this.btnGenerujPDF);
@@ -167,6 +179,7 @@
         private System.Windows.Forms.Button btnGenerujPDF;
         private System.Windows.Forms.WebBrowser wbPrzegladarka;
         private System.Windows.Forms.CheckedListBox clbKolumny;
+        private System.Windows.Forms.Button btnPokazSreniWiek;
     }
 }
 

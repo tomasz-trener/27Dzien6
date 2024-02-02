@@ -10,6 +10,14 @@ namespace P02PolaczenieZBaza
     public class PolaczenieZBaza
     {
         private readonly string connectionString;
+
+        public string ConnectionString
+        {
+            get
+            {
+                return connectionString;
+            }
+        }
         public PolaczenieZBaza()
         {
             connectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=A_Zawodnicy;Integrated Security=True";

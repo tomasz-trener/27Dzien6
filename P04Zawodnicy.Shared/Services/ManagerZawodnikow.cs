@@ -2,6 +2,7 @@
 using P04Zawodnicy.Shared.Domain;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -149,6 +150,37 @@ namespace P04Zawodnicy.Shared.Services
                 };
             }
             return trenerzy;
+        }
+
+        public int PodajSredniWiekZawodnikow(string kraj)
+        {
+            using (SqlConnection connection = new SqlConnection(pzb.ConnectionString))
+            {
+                SqlCommand command = new SqlCommand("SredniWiekZawodnikow", connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@Kraj", kraj));
+
+                SqlParameter sredniWiekParam = new SqlParameter("@SredniWiek", System.Data.SqlDbType.Int)
+                {
+                    Direction = System.Data.ParameterDirection.Output,
+                };
+                command.Parameters.Add(sredniWiekParam);
+
+                connection.Open();
+                command.ExecuteNonQuery();
+
+                if (sredniWiekParam.Value != DBNull.Value)
+                {
+                    return (int)sredniWiekParam.Value;
+                }
+                else
+                {
+                    throw new Exception("Nie udało sie policzyć średniego wieku ");
+                }
+
+               // connection.Close(); nie trzeba tego pisac 
+            }
+            
         }
     }
 }
